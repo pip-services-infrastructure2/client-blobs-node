@@ -8,16 +8,6 @@
     "artifacts": [
         {
             "name": "<name>",
-            "tag": "latest",
-            "type": "docker"
-        },
-        {
-            "name": "<name>",
-            "tag": "<version>-<build>",
-            "type": "docker"
-        },
-        {
-            "name": "<name>",
             "type": "npm"
         }
     ]
