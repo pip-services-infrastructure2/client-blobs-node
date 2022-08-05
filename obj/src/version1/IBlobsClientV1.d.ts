@@ -10,7 +10,7 @@ export interface IBlobsClientV1 {
     getBlobUriById(correlationId: string, blobId: string): Promise<string>;
     createBlobFromData(correlationId: string, blob: BlobInfoV1, buffer: any): Promise<BlobInfoV1>;
     getBlobDataById(correlationId: string, blobId: string): Promise<any>;
-    createBlobFromStream(correlationId: string, blob: BlobInfoV1, readStream: any): Promise<any>;
+    createBlobFromStream(correlationId: string, blob: BlobInfoV1, readStream: any): Promise<BlobInfoV1>;
     getBlobStreamById(correlationId: string, blobId: string, writeStream: any): Promise<any>;
     updateBlobInfo(correlationId: string, blob: BlobInfoV1): Promise<BlobInfoV1>;
     markBlobsCompleted(correlationId: string, blobIds: string[]): Promise<void>;

@@ -13,7 +13,7 @@ import { BlobInfoV1 } from './BlobInfoV1';
 export class BlobsStreamProcessorV1 {
 
     public static async createBlobFromStream(correlationId: string, blob: BlobInfoV1, 
-        writer: IBlobsChunkyWriterV1, readStream: any): Promise<any> {
+        writer: IBlobsChunkyWriterV1, readStream: any): Promise<BlobInfoV1> {
 
         let token: string = null;
         let error: any = null;
