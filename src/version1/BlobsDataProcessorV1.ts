@@ -40,7 +40,7 @@ export class BlobsDataProcessorV1 {
     }
 
     public static async getBlobDataById(correlationId: string, blobId: string,
-        reader: IBlobsChunkyReaderV1, chunkSize: number): Promise<BlobDataV1> {
+        reader: IBlobsChunkyReaderV1, chunkSize: number): Promise<any> {
         
         let blob: BlobInfoV1;
         let buffer: any = null;

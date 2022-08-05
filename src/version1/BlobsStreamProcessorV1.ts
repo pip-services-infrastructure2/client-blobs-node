@@ -73,7 +73,7 @@ export class BlobsStreamProcessorV1 {
     }
 
     public static async getBlobStreamById(correlationId: string, blobId: string,
-        reader: IBlobsChunkyReaderV1, chunkSize: number, writeStream: any): Promise<any> {
+        reader: IBlobsChunkyReaderV1, chunkSize: number, writeStream: any): Promise<BlobInfoV1> {
         
         let rs = stream.Readable();
         let blob: BlobInfoV1;
