@@ -2,7 +2,7 @@ import { ConfigParams } from 'pip-services3-commons-nodex';
 import { FilterParams } from 'pip-services3-commons-nodex';
 import { PagingParams } from 'pip-services3-commons-nodex';
 import { DataPage } from 'pip-services3-commons-nodex';
-import { CommandableGrpcClient } from 'pip-services3-grpc-nodex';
+import { CommandableHttpClient } from 'pip-services3-rpc-nodex';
 
 import { BlobInfoV1 } from './BlobInfoV1';
 import { IBlobsClientV1 } from './IBlobsClientV1';
@@ -13,7 +13,7 @@ import { BlobsUriProcessorV1 } from './BlobsUriProcessorV1';
 import { BlobsStreamProcessorV1 } from './BlobsStreamProcessorV1';
 import { BlobDataV1 } from './BlobDataV1';
 
-export class BlobsCommandableGrpcClientV1 extends CommandableGrpcClient
+export class BlobsCommandableHttpClientV1 extends CommandableHttpClient
     implements IBlobsClientV1, IBlobsChunkyReaderV1, IBlobsChunkyWriterV1 {
     private _chunkSize: number = 10240;
 
@@ -83,7 +83,7 @@ export class BlobsCommandableGrpcClientV1 extends CommandableGrpcClient
     }
 
     public async createBlobFromStream(correlationId: string, blob: BlobInfoV1, readStream: any): Promise<BlobInfoV1> {
-        return await BlobsStreamProcessorV1.createBlobFromStream(correlationId, blob, this, readStream);
+        return BlobsStreamProcessorV1.createBlobFromStream(correlationId, blob, this, readStream);
     }
 
     public async getBlobStreamById(correlationId: string, blobId: string, writeStream: any): Promise<any> {
@@ -186,7 +186,7 @@ export class BlobsCommandableGrpcClientV1 extends CommandableGrpcClient
 
     public async deleteBlobById(correlationId: string, blobId: string): Promise<void> {
         return await this.callCommand(
-            'delete_blob_id',
+            'delete_blob_by_id',
             correlationId,
             {
                 blob_id: blobId

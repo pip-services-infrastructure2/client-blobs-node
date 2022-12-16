@@ -1,7 +1,7 @@
 import { ConfigParams } from 'pip-services3-commons-nodex';
 
 import { BlobsClientFixtureV1 } from './BlobsClientFixtureV1';
-import { BlobsLambdaClientV1 } from '../../src/version1/BlobsLambdaClientV1';
+import { BlobsCommandableLambdaClientV1 } from '../../src/version1/BlobsCommandableLambdaClientV1';
 
 suite('BlobsLambdaClient', ()=> {
     let AWS_LAMDBA_ARN = process.env["AWS_LAMDBA_ARN"] || "";
@@ -24,11 +24,11 @@ suite('BlobsLambdaClient', ()=> {
     if (lambdaConfig.getAsNullableString("connection.protocol") != "aws")
         return;
 
-    let client: BlobsLambdaClientV1;
+    let client: BlobsCommandableLambdaClientV1;
     let fixture: BlobsClientFixtureV1;
 
     setup(async () => {
-        client = new BlobsLambdaClientV1();
+        client = new BlobsCommandableLambdaClientV1();
         client.configure(lambdaConfig);
 
         fixture = new BlobsClientFixtureV1(client);

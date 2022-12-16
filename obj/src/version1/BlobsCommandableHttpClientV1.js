@@ -9,13 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlobsCommandableGrpcClientV1 = void 0;
+exports.BlobsCommandableHttpClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
-const pip_services3_grpc_nodex_1 = require("pip-services3-grpc-nodex");
+const pip_services3_rpc_nodex_1 = require("pip-services3-rpc-nodex");
 const BlobsDataProcessorV1_1 = require("./BlobsDataProcessorV1");
 const BlobsUriProcessorV1_1 = require("./BlobsUriProcessorV1");
 const BlobsStreamProcessorV1_1 = require("./BlobsStreamProcessorV1");
-class BlobsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.CommandableGrpcClient {
+class BlobsCommandableHttpClientV1 extends pip_services3_rpc_nodex_1.CommandableHttpClient {
     constructor(config) {
         super('v1/blobs');
         this._chunkSize = 10240;
@@ -72,7 +72,7 @@ class BlobsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.Commandabl
     }
     createBlobFromStream(correlationId, blob, readStream) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield BlobsStreamProcessorV1_1.BlobsStreamProcessorV1.createBlobFromStream(correlationId, blob, this, readStream);
+            return BlobsStreamProcessorV1_1.BlobsStreamProcessorV1.createBlobFromStream(correlationId, blob, this, readStream);
         });
     }
     getBlobStreamById(correlationId, blobId, writeStream) {
@@ -149,7 +149,7 @@ class BlobsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.Commandabl
     }
     deleteBlobById(correlationId, blobId) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield this.callCommand('delete_blob_id', correlationId, {
+            return yield this.callCommand('delete_blob_by_id', correlationId, {
                 blob_id: blobId
             });
         });
@@ -162,5 +162,5 @@ class BlobsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.Commandabl
         });
     }
 }
-exports.BlobsCommandableGrpcClientV1 = BlobsCommandableGrpcClientV1;
-//# sourceMappingURL=BlobsCommandableGrpcClientV1.js.map
+exports.BlobsCommandableHttpClientV1 = BlobsCommandableHttpClientV1;
+//# sourceMappingURL=BlobsCommandableHttpClientV1.js.map

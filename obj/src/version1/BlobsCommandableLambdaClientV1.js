@@ -9,15 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BlobsCommandableGrpcClientV1 = void 0;
+exports.BlobsCommandableLambdaClientV1 = void 0;
 const pip_services3_commons_nodex_1 = require("pip-services3-commons-nodex");
-const pip_services3_grpc_nodex_1 = require("pip-services3-grpc-nodex");
+const pip_services3_aws_nodex_1 = require("pip-services3-aws-nodex");
 const BlobsDataProcessorV1_1 = require("./BlobsDataProcessorV1");
 const BlobsUriProcessorV1_1 = require("./BlobsUriProcessorV1");
 const BlobsStreamProcessorV1_1 = require("./BlobsStreamProcessorV1");
-class BlobsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.CommandableGrpcClient {
+class BlobsCommandableLambdaClientV1 extends pip_services3_aws_nodex_1.CommandableLambdaClient {
     constructor(config) {
-        super('v1/blobs');
+        super('blobs');
         this._chunkSize = 10240;
         if (config != null)
             this.configure(pip_services3_commons_nodex_1.ConfigParams.fromValue(config));
@@ -162,5 +162,5 @@ class BlobsCommandableGrpcClientV1 extends pip_services3_grpc_nodex_1.Commandabl
         });
     }
 }
-exports.BlobsCommandableGrpcClientV1 = BlobsCommandableGrpcClientV1;
-//# sourceMappingURL=BlobsCommandableGrpcClientV1.js.map
+exports.BlobsCommandableLambdaClientV1 = BlobsCommandableLambdaClientV1;
+//# sourceMappingURL=BlobsCommandableLambdaClientV1.js.map

@@ -46,13 +46,12 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? BlobsGrpcConverterV1.toBlobInfoPage(response.getPage()) : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
-        }  
+        } 
     }
 
     public async getBlobsByIds(correlationId: string, blobIds: string[]): Promise<BlobInfoV1[]> {
@@ -66,13 +65,12 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? BlobsGrpcConverterV1.toBlobInfos(response.getBlobsList()) : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
-        }         
+        }        
     }
 
     public async getBlobById(correlationId: string, blobId: string): Promise<BlobInfoV1> {
@@ -86,12 +84,11 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? BlobsGrpcConverterV1.toBlobInfo(response.getBlob()) : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -110,12 +107,11 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? response.getUri() : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -148,12 +144,11 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? response.getToken() : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -169,12 +164,11 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? response.getToken() : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -190,12 +184,11 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? BlobsGrpcConverterV1.toBlobInfo(response.getBlob()) : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -210,11 +203,10 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
     
@@ -229,12 +221,11 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? BlobsGrpcConverterV1.toBlobInfo(response.getBlob()) : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -251,12 +242,11 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
             return response ? response.getChunk() : null
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
     
@@ -271,11 +261,10 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -292,13 +281,11 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
-            
+            timing.endTiming();
             return response ? BlobsGrpcConverterV1.toBlobInfo(response.getBlob()) : null;
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -313,11 +300,10 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -332,11 +318,10 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
 
@@ -351,11 +336,10 @@ export class BlobsGrpcClientV1 extends GrpcClient
 
             if (response.error != null)
                 throw BlobsGrpcConverterV1.toError(response.error);
+            timing.endTiming();
         } catch (err) {
             timing.endFailure(err);
             throw err;
-        } finally {
-            timing.endTiming();
         }
     }
  

@@ -39,14 +39,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('get_blobs_by_filter', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toBlobInfoPage(response.getPage()) : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -59,14 +57,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('get_blobs_by_ids', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toBlobInfos(response.getBlobsList()) : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -79,14 +75,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('get_blob_by_id', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toBlobInfo(response.getBlob()) : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -104,14 +98,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('get_blob_uri_by_id', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? response.getUri() : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -143,14 +135,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('begin_blob_write', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? response.getToken() : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -164,14 +154,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('write_blob_chunk', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? response.getToken() : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -185,14 +173,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('end_blob_write', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toBlobInfo(response.getBlob()) : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -205,13 +191,11 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('abort_blob_write', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -224,14 +208,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('begin_blob_read', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toBlobInfo(response.getBlob()) : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -246,14 +228,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('read_blob_chunk', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? response.getChunk() : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -266,13 +246,11 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('end_blob_read', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -286,14 +264,12 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('update_blob_info', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
                 return response ? BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toBlobInfo(response.getBlob()) : null;
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -306,13 +282,11 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('mark_blobs_completed', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -325,13 +299,11 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('delete_blob_by_id', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }
@@ -344,13 +316,11 @@ class BlobsGrpcClientV1 extends pip_services3_grpc_nodex_1.GrpcClient {
                 let response = yield this.call('delete_blobs_by_ids', correlationId, request);
                 if (response.error != null)
                     throw BlobsGrpcConverterV1_1.BlobsGrpcConverterV1.toError(response.error);
+                timing.endTiming();
             }
             catch (err) {
                 timing.endFailure(err);
                 throw err;
-            }
-            finally {
-                timing.endTiming();
             }
         });
     }

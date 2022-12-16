@@ -6,7 +6,7 @@ import { ConsoleLogger } from 'pip-services3-components-nodex';
 import { BlobsMemoryPersistence } from 'service-blobs-node';
 import { BlobsController } from 'service-blobs-node';
 import { BlobsHttpServiceV1 } from 'service-blobs-node';
-import { BlobsHttpClientV1 } from '../../src/version1/BlobsHttpClientV1';
+import { BlobsCommandableHttpClientV1 } from '../../src/version1/BlobsCommandableHttpClientV1';
 import { BlobsClientFixtureV1 } from './BlobsClientFixtureV1';
 
 var httpConfig = ConfigParams.fromTuples(
@@ -17,7 +17,7 @@ var httpConfig = ConfigParams.fromTuples(
 
 suite('BlobsHttpClientV1', ()=> {
     let service: BlobsHttpServiceV1;
-    let client: BlobsHttpClientV1;
+    let client: BlobsCommandableHttpClientV1;
     let fixture: BlobsClientFixtureV1;
 
     suiteSetup(async () => {
@@ -37,7 +37,7 @@ suite('BlobsHttpClientV1', ()=> {
         controller.setReferences(references);
         service.setReferences(references);
 
-        client = new BlobsHttpClientV1();
+        client = new BlobsCommandableHttpClientV1();
         client.setReferences(references);
         client.configure(httpConfig);
 
