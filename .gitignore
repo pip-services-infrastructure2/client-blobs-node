@@ -3,7 +3,6 @@
 /.idea
 /dist
 /obj/test
-/data/file*
 /package-lock.json
 /docker/id_rsa*
 /docker/.npmrc
